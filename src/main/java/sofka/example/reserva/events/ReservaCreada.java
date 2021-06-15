@@ -5,10 +5,12 @@ import sofka.example.generalValues.Fecha;
 
 public class ReservaCreada extends DomainEvent {
     private final Fecha fecha;
+    private final int hora;
 
-    public ReservaCreada(Fecha fecha) {
+    public ReservaCreada(Fecha fecha, int hora) {
         super("sofka.reserva.reservaCreada");
         this.fecha = fecha;
+        this.hora = hora;
     }
 
     public Fecha getFecha() {

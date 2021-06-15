@@ -14,10 +14,13 @@ public class ReservaChange extends EventChange {
             reserva.particulares = new ArrayList<>();
         });
         apply((ElementoAsociado event) -> {
-            reserva.elementos = new ArrayList<>();
+            Elemento elementoAux = new Elemento(event.getElementoId(), event.getNombreElemento(), event.getEstado());
+            reserva.elementos.add(elementoAux);
 
         });
-        apply((ParticularAgregado event)->{
+        apply((ParticularAgregado event) -> {
+            Particular particularAux = new Particular(event.getParticularId(), event.getNombreParticular());
+            reserva.particulares.add(particularAux);
         });
     }
 }

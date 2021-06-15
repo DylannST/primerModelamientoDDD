@@ -14,4 +14,12 @@ public class ParticularAgregado extends DomainEvent {
         this.particularId = particularId;
         this.nombreParticular = nombreParticular;
     }
+
+    public ParticularId getParticularId() {
+        return particularId;
+    }
+
+    public Nombre getNombreParticular() {
+        return nombreParticular;
+    }
 }
