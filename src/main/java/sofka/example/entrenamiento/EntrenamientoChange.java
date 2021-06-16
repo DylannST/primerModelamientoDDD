@@ -27,6 +27,7 @@ public class EntrenamientoChange extends EventChange {
             }
             Aprendiz aprendiz = new Aprendiz(event.getAprendizId(), event.getNombreAprendiz(), event.getSexo());
             entrenamiento.aprendices.set(contador, aprendiz);
+            contador = 0;
         });
     }
 }

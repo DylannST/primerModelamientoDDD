@@ -30,13 +30,13 @@ public class Entrenamiento extends AggregateEvent<EntrenamientoId> {
         appendChange(new AprendizAgregado(aprendizId, nombreAprendiz, sexo)).apply();
     }
 
-    public void agregarInstructor(InstructorId instructorId, Nombre nombreInstructor) {
+    public void agregarInstructor(InstructorId instructorId, Nombre nombreInstructor, String sexo) {
         Objects.requireNonNull(instructorId);
         Objects.requireNonNull(nombreInstructor);
         appendChange(new InstructorAgregado(instructorId, nombreInstructor, sexo));
     }
 
-    public void actualizarNombreAprendiz(AprendizId aprendizId, Nombre nombreAprendiz) {
+    public void actualizarNombreAprendiz(AprendizId aprendizId, Nombre nombreAprendiz,String sexo) {
         Objects.requireNonNull(nombreAprendiz);
         appendChange(new NombreAprendizActualizado(aprendizId, nombreAprendiz, sexo)).apply();
     }
